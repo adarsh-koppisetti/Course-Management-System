@@ -3,18 +3,42 @@ import time
 
 course_database = {
     "basic probability": {"subject": "Mathematics", "level": "Beginner", "instructor": "puvaneshwari", "rating": 4.5},
+    "Discrete Mathematics": {"subject": "Mathematics", "level": "Intermediate", "instructor": "geetha j", "rating": 4.5},
+    "multi variable calculus": {"subject": "Mathematics", "level": "Advanced", "instructor": "ramesh babu", "rating": 4.5},
+
     "organic chemistry": {"subject": "Science", "level": "Intermediate", "instructor": "prabhas", "rating": 4.0},
-    "applications of electronics": {"subject": "Physics", "level": "Advanced", "instructor": "madhu mohan",
-                                    "rating": 4.2},
+    "neuclear science": {"subject": "Science", "level": "Advanced", "instructor": "Ramesh j", "rating": 4.0},
+    "inorganic chemistry": {"subject": "Science", "level": "Beginner", "instructor": "prabhas", "rating": 4.0},
+    "physical chemistry": {"subject": "Science", "level": "Intermediate", "instructor": "roopa r", "rating": 4.0},
+
+    "applications of electronics": {"subject": "Physics", "level": "Intermediate", "instructor": "madhu mohan","rating": 4.2},
+    "engineering physics": {"subject": "Physics", "level": "Beginner", "instructor": "Ravi","rating": 4.2},
+    "electronics lab": {"subject": "Physics", "level": "Beginner", "instructor": "hariharan", "rating": 4.2},
+    "quantum physics": {"subject": "Physics", "level": "Advanced", "instructor": "madhu mohan","rating": 4.2},
+
     "signal processing": {"subject": "optics", "level": "Intermediate", "instructor": "prabhu", "rating": 4.8},
+    "Ray optics": {"subject": "optics", "level": "Beginner", "instructor": "hanu", "rating": 4.8},
+    "laser optics": {"subject": "optics", "level": "Advanced", "instructor": "pravallatha", "rating": 4.8},
+
     "engineering drawing": {"subject": "Art", "level": "Beginner", "instructor": "vaira vignesh", "rating": 3.9},
-    "advance programming": {"subject": "programming", "level": "Intermediate", "instructor": "shanmugha priya",
-                            "rating": 4.6},
-    "web development": {"subject": "programming", "level": "Intermediate", "instructor": "manjusha", "rating": 4.0}
+    "digital painting": {"subject": "Art", "level": "Intermediate", "instructor": "hari", "rating": 3.9},
+    "canvas": {"subject": "Art", "level": "Advanced", "instructor": "priya", "rating": 3.9},
+
+    "Python": {"subject": "programming", "level": "Beginner", "instructor": "manjusha", "rating": 4.0},
+    "Problem solving": {"subject": "programming", "level": "Beginner", "instructor": "aarthi", "rating": 4.0},
+    "basics of c": {"subject": "programming", "level": "Beginner", "instructor": "jeena", "rating": 4.0},
+
+    "advance programming": {"subject": "programming", "level": "Intermediate", "instructor": "shanmugha priya","rating": 4.6},
+    "oops": {"subject": "programming", "level": "Intermediate", "instructor": "senthil m", "rating": 4.0},
+    "program reasoning": {"subject": "programming", "level": "Intermediate", "instructor": "shanmug priya", "rating": 4.0},
+    "web development": {"subject": "programming", "level": "Intermediate", "instructor": "prathilothamai", "rating": 4.0},
+
+    "machine learning": {"subject": "programming", "level": "Advanced", "instructor": " dr. vidhya bala subramanyam", "rating": 4.0},
+    "networking": {"subject": "programming", "level": "Advanced", "instructor": "adarsh", "rating": 4.0}
 }
 
 
-# Graph class to represent course connections
+
 class Graph:
     def __init__(self):
         self.graph = {}
@@ -27,7 +51,7 @@ class Graph:
             self.graph[key] = [course]
 
 
-# Hash Table class to store course attributes and ratings
+
 class HashTable:
     def __init__(self):
         self.table = {}
@@ -39,7 +63,7 @@ class HashTable:
         return self.table.get(key)
 
 
-# Queue class to represent course enrollment
+
 class Queue:
     def __init__(self):
         self.queue = []
@@ -63,13 +87,13 @@ class Queue:
             print("Enrollment list is empty.")
 
 
-# Build the graph and hash tables
+
 course_graph = Graph()
 course_attributes = HashTable()
 course_ratings = HashTable()
 course_reviews = HashTable()
 
-# Generate all combinations of subjects and levels
+
 all_subjects = ["Mathematics", "Science", "Physics", "optics", "Art", "programming"]
 all_levels = ["Beginner", "Intermediate", "Advanced"]
 all_combinations = list(itertools.product(all_subjects, all_levels))
@@ -81,7 +105,7 @@ for course, attributes in course_database.items():
     course_attributes.insert(course, attributes)
 
 
-# Perform personalized course recommendations based on subject and level
+
 def recommend_courses():
     print("Select a Subject:")
     for index, subject in enumerate(all_subjects, start=1):
@@ -116,7 +140,7 @@ def recommend_courses():
         return []
 
 
-# User management system
+
 class UserManagementSystem:
     def __init__(self):
         self.users = {}
@@ -235,10 +259,10 @@ class UserManagementSystem:
             print("User not found.")
 
 
-# Create an instance of the UserManagementSystem
+
 ums = UserManagementSystem()
 
-# Menu-driven loop
+
 while True:
     print("1. Create Account")
     print("2. Login")
